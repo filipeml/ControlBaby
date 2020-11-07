@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AdicionarBebesActivity">
+
+    <Button
+        android:id="@+id/btnSalvarBebe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="35dp"
+        android:onClick="adicionarBebe"
+        android:text="Salvar"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnCancelarBebe"
+        app:layout_constraintEnd_toStartOf="@+id/btnCancelarBebe" />
+
+    <Button
+        android:id="@+id/btnCancelarBebe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="92dp"
+        android:layout_marginRight="92dp"
+        android:layout_marginBottom="64dp"
+        android:onClick="cancelarBebe"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginRight="74dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCancelarBebe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtSexo"
+        app:layout_constraintTop_toBottomOf="@+id/editDataNascBebe">
+
+        <RadioButton
+            android:id="@+id/radioSexoBebeMenino"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Menino" />
+
+        <RadioButton
+            android:id="@+id/radioSexoBebeMenina"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Menina" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtSexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="Sexo:"
+        app:layout_constraintEnd_toStartOf="@+id/radioGroup"
+        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/radioGroup" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editNomeBebe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:hint="Nome"
+        app:layout_constraintBottom_toTopOf="@+id/editPesoBebe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editDataNascBebe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="24dp"
+        android:hint="Data de Nascimento"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editCompBebe" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editPesoBebe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="24dp"
+        android:hint="Peso"
+        app:layout_constraintBottom_toTopOf="@+id/editCompBebe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editNomeBebe" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editCompBebe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Comprimento"
+        app:layout_constraintBottom_toTopOf="@+id/editDataNascBebe"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editPesoBebe" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

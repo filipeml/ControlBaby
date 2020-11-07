@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "470012175101",
+    "firebase_url": "https://babycontrol2705.firebaseio.com",
+    "project_id": "babycontrol2705",
+    "storage_bucket": "babycontrol2705.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:470012175101:android:0bd9aaa35dd763e5eb9494",
+        "android_client_info": {
+          "package_name": "com.projeto.teste"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "470012175101-jgli43gpcm3enjpic5cejhqejp1rm4gm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.projeto.teste",
+            "certificate_hash": "23f1d065d004277bd9da870201f2bb437a027b7e"
+          }
+        },
+        {
+          "client_id": "470012175101-pagicdl7rn1a8n7dsr3arnk8c6hi4j63.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFtgoIsnBcSyniXSNhJLEmL00lbRgfDgo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "470012175101-pagicdl7rn1a8n7dsr3arnk8c6hi4j63.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

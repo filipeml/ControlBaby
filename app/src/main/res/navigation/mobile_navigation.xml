@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_bebe">
+
+    <fragment
+        android:id="@+id/nav_bebe"
+        android:name="com.projeto.teste.ui.bebe.BebeFragment"
+        android:label="Bebê"
+        tools:layout="@layout/fragment_bebe" />
+
+    <fragment
+        android:id="@+id/nav_alimentacao"
+        android:name="com.projeto.teste.ui.alimentacao.AlimentacaoFragment"
+        android:label="Alimentação"
+        tools:layout="@layout/fragment_alimentacao" />
+
+    <fragment
+        android:id="@+id/nav_remedio"
+        android:name="com.projeto.teste.ui.remedio.RemedioFragment"
+        android:label="Remedio"
+        tools:layout="@layout/fragment_remedio" />
+
+    <fragment
+        android:id="@+id/nav_fraldas"
+        android:name="com.projeto.teste.ui.fraldas.FraldasFragment"
+        android:label="Troca de Fraldas"
+        tools:layout="@layout/fragment_fraldas" />
+
+    <fragment
+        android:id="@+id/nav_crescimento"
+        android:name="com.projeto.teste.ui.crescimento.CrescimentoFragment"
+        android:label="Crescimento"
+        tools:layout="@layout/fragment_crescimento" />
+
+    <fragment
+        android:id="@+id/nav_vacinas"
+        android:name="com.projeto.teste.ui.vacinas.VacinasFragment"
+        android:label="Vacinas"
+        tools:layout="@layout/fragment_vacinas" />
+
+    <fragment
+        android:id="@+id/nav_pediatra"
+        android:name="com.projeto.teste.ui.pediatra.PediatraFragment"
+        android:label="Pediatra"
+        tools:layout="@layout/fragment_pediatra" />
+
+
+
+
+</navigation>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_bebe"
+            android:icon="@drawable/bebe"
+            android:title="Cadastro Bebê" />
+
+        <item
+            android:id="@+id/nav_alimentacao"
+            android:icon="@drawable/mamadeira"
+            android:title="Alimentação" />
+
+        <item
+            android:id="@+id/nav_fraldas"
+            android:icon="@drawable/fralda"
+            android:title="Troca de Fraldas" />
+
+        <item
+            android:id="@+id/nav_crescimento"
+            android:icon="@drawable/balanca"
+            android:title="Crescimento" />
+    </group>
+
+    <item android:title="Saúde">
+        <menu>
+            <item
+                android:id="@+id/nav_vacinas"
+                android:icon="@drawable/vacina"
+                android:title="Vacinas" />
+            <item
+                android:id="@+id/nav_pediatra"
+                android:icon="@drawable/estetoscopio"
+                android:title="Pediatra" />
+            <item
+            android:id="@+id/nav_remedio"
+            android:icon="@drawable/comprimido"
+            android:title="Remédios" />
+
+        </menu>
+    </item>
+
+</menu>
