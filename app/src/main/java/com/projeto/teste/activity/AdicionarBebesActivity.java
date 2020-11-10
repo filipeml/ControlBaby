@@ -85,7 +85,7 @@ public class AdicionarBebesActivity extends AppCompatActivity {
 
     public void inicializarCampos(){
         campoNome           =   findViewById(R.id.editNomeBebe);
-        campoPeso           =   findViewById(R.id.editPesoBebe);
+        campoPeso           =   findViewById(R.id.editPeso );
         campoComprimento    =   findViewById(R.id.editCompBebe);  //ajustei esse cara estava errado e com espaço no "findViewById (R.id.editCompBebe);"
         campoNascimento     =   findViewById(R.id.editDataNascBebe);
         campoSexoF          =   findViewById(R.id.radioSexoBebeMenina);

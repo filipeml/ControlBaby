@@ -77,7 +77,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:hint="Nome"
-        app:layout_constraintBottom_toTopOf="@+id/editPesoBebe"
+        app:layout_constraintBottom_toTopOf="@+id/editPeso"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -98,7 +98,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editCompBebe" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editPesoBebe"
+        android:id="@+id/editPeso"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -125,6 +125,6 @@
         app:layout_constraintBottom_toTopOf="@+id/editDataNascBebe"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editPesoBebe" />
+        app:layout_constraintTop_toBottomOf="@+id/editPeso" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
