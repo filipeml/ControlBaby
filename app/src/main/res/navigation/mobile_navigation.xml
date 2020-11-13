@@ -25,9 +25,9 @@
 
     <fragment
         android:id="@+id/nav_fraldas"
-        android:name="com.projeto.teste.ui.fraldas.FraldasFragment"
+        android:name="com.projeto.teste.ui.fralda.FraldaFragment"
         android:label="Troca de Fraldas"
-        tools:layout="@layout/fragment_fraldas" />
+        tools:layout="@layout/fragment_fralda" />
 
     <fragment
         android:id="@+id/nav_crescimento"

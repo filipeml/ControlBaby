@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AdicionarFraldaActivity">
+
+    <Button
+        android:id="@+id/btnSalvarFralda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:layout_marginRight="48dp"
+        android:onClick="adicionarFralda"
+        android:text="Salvar"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnCancelarFralda"
+        app:layout_constraintEnd_toStartOf="@+id/btnCancelarFralda" />
+
+    <Button
+        android:id="@+id/btnCancelarFralda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="92dp"
+        android:layout_marginRight="92dp"
+        android:layout_marginBottom="64dp"
+        android:onClick="cancelarFralda"
+        android:text="Cancelar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="204dp"
+        android:layout_height="97dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginRight="74dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnCancelarFralda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtCondicao"
+        app:layout_constraintTop_toBottomOf="@+id/editHoraTroca">
+
+        <RadioButton
+            android:id="@+id/radioCondicaoFraldaXixi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Xixi" />
+
+        <RadioButton
+            android:id="@+id/radioCondicaoFraldaCoco"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Coco" />
+
+        <RadioButton
+            android:id="@+id/radioCondicaoFraldaMisto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Misto" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtCondicao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="Condição:"
+        app:layout_constraintEnd_toStartOf="@+id/radioGroup"
+        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/radioGroup" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editDataTroca"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:hint="Data da Troca"
+        app:layout_constraintBottom_toTopOf="@+id/editHoraTroca"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/editHoraTroca"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="24dp"
+        android:hint="Hora da Troca"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

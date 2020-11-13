@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.bebe.BebeFragment">
+    tools:context=".ui.fralda.FraldaFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <include layout="@layout/content_remedio"/>
+    <include layout="@layout/content_fralda"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAddRemedio"
+        android:id="@+id/fabAddFralda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"

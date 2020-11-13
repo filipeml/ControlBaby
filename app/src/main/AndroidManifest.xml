@@ -14,6 +14,8 @@
         <activity android:name=".activity.AdicionarAlimentacaoActivity"></activity>
         <activity android:name=".activity.AdicionarCrescimentoActivity"></activity>
         <activity android:name=".activity.AdicionarPediatraActivity"></activity>
+        <activity android:name=".activity.AdicionarRemedioActivity"></activity>
+        <activity android:name=".activity.AdicionarFraldaActivity"></activity>
         <activity
             android:name=".MenuPrincActivity"
             android:label="@string/title_activity_menu_princ"
