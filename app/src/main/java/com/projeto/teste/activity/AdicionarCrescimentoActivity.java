@@ -1,16 +1,32 @@
 package com.projeto.teste.activity;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 import com.projeto.teste.R;
+import com.projeto.teste.adapter.AdapterCrescimento;
 import com.projeto.teste.helper.DateHelper;
+import com.projeto.teste.model.Bebe;
 import com.projeto.teste.model.Crescimento;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import dmax.dialog.SpotsDialog;
 
 public class AdicionarCrescimentoActivity extends AppCompatActivity {
     private TextInputEditText campoDataMedicao;
@@ -19,6 +35,14 @@ public class AdicionarCrescimentoActivity extends AppCompatActivity {
     private Button btnSalvar;
     private Button btnCancelar;
     private String dataMedicao, pesoBebe, tamanhoBebe;
+    private DatabaseReference refCrescimentoFirebase;
+    private AdapterCrescimento adapterCrescimento;
+    private List<Bebe> listBebes = new ArrayList<> ();
+    private List<String> listNomeBebes = new ArrayList<>();
+    private HashMap<String, String> posicoesBebes = new HashMap<>();
+    private Spinner spinnerCrescimentoBebe;
+    private int index;
+    private AlertDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +50,9 @@ public class AdicionarCrescimentoActivity extends AppCompatActivity {
         setContentView ( R.layout.activity_adicionar_crescimento );
         inicializarCampos ( );  //faltava esse incializar campos aqui ao criar a tela, para carregar os inputs...
     }
+
+
+
 
     public void adicionarCrescimento(View view) {
         if (validarCampos ( )) {
@@ -51,6 +78,47 @@ public class AdicionarCrescimentoActivity extends AppCompatActivity {
         return true;
     }
 
+
+    public void recuperarCrescimentoFirebase(){
+        dialog = (SpotsDialog) new SpotsDialog.Builder()
+                .setContext(AdicionarCrescimentoActivity.this)
+                .setMessage("carregando crescimento")
+                .setCancelable(false)
+                .build();
+        dialog.show();
+
+        refCrescimentoFirebase.addListenerForSingleValueEvent(new ValueEventListener () {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                listBebes.clear();
+                index   =   0;
+                for (DataSnapshot ds : dataSnapshot.getChildren()){
+                    listBebes.add(ds.getValue(Bebe.class));
+                    listNomeBebes.add(listBebes.get(index).getNomeBebe());
+                    index++;
+                }
+                for(int i = 0; i < index; i++){
+                    posicoesBebes.put(listBebes.get(i).getNomeBebe(), listBebes.get(i).getIdBebe());
+                }
+
+                //Adapter Spinner
+                ArrayAdapter<String> adapterSpinner = new ArrayAdapter<>(
+                        AdicionarCrescimentoActivity.this,
+                        android.R.layout.simple_spinner_item,
+                        listNomeBebes
+                );
+                adapterSpinner.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+                spinnerCrescimentoBebe.setAdapter(adapterSpinner);
+                dialog.dismiss();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
+
     public void getInputs() {  //e aqui tinha os espaços no: "getText ()" e "toString ()", tem que ser sempre junto "getText()" e "toString()"
         dataMedicao = campoDataMedicao.getText().toString();
         pesoBebe = campoPesoBebe.getText().toString();
@@ -68,6 +136,7 @@ public class AdicionarCrescimentoActivity extends AppCompatActivity {
         campoTamanhoBebe = findViewById (R.id.editTamanho );
         btnSalvar = findViewById (R.id.btnSalvarMedicao );
         btnCancelar = findViewById (R.id.btnCancelarMedicao );
+        spinnerCrescimentoBebe = findViewById ( R.id.spinnerCrescimentoBebe );
     }
 
     public boolean validarData(String data) {

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -24,10 +25,12 @@ import com.projeto.teste.activity.EditarBebesAcivity;
 import com.projeto.teste.adapter.AdapterCrescimento;
 import com.projeto.teste.helper.Firebase;
 import com.projeto.teste.helper.RecyclerItemClickListener;
+import com.projeto.teste.model.Bebe;
 import com.projeto.teste.model.Crescimento;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 import dmax.dialog.SpotsDialog;
@@ -52,6 +55,11 @@ public class CrescimentoFragment extends Fragment {
     private DatabaseReference refCrescimentoFirebase;
     private List<Crescimento> listCrescimento=new ArrayList<> ( );
     private AdapterCrescimento adapterCrescimento;
+    private List<Bebe> listBebes = new ArrayList<>();
+    private List<String> listNomeBebes = new ArrayList<>();
+    private HashMap<String, String> posicoesBebes = new HashMap<>();
+    private Spinner spinnerCrescimentoBebe;
+    private int index;
     private AlertDialog dialog;
 
     public CrescimentoFragment() {
@@ -130,7 +138,7 @@ public class CrescimentoFragment extends Fragment {
     public void recuperarCrescimentoFirebase(){
         dialog = new SpotsDialog.Builder()
                 .setContext(getContext())
-                .setMessage("carregando alimentacao")
+                .setMessage("carregando crescimento")
                 .setCancelable(false)
                 .build();
         dialog.show();
@@ -143,13 +151,13 @@ public class CrescimentoFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 listCrescimento.clear();
                 for (DataSnapshot ds : dataSnapshot.getChildren()){
-                    listCrescimento.add(ds.getValue( Crescimento.class));
+                    listCrescimento.add(ds.getValue(Crescimento.class));
                 }
 
-                Collections.reverse(listCrescimento);
-                adapterCrescimento.setCrescimento (listCrescimento);
-                adapterCrescimento.notifyDataSetChanged();
-                dialog.dismiss();
+                Collections.reverse ( listCrescimento );
+                adapterCrescimento.setCrescimento ( listCrescimento );
+                adapterCrescimento.notifyDataSetChanged ();
+                dialog.dismiss ();
             }
 
             @Override

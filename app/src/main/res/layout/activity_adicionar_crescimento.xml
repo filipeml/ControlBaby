@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
 
     <com.google.android.material.textfield.TextInputEditText
+
         android:id="@+id/editTamanho"
         android:layout_width="411dp"
         android:layout_height="wrap_content"
@@ -85,4 +86,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnSalvarMedicao"
         app:layout_constraintTop_toBottomOf="@+id/editTamanho" />
+
+    <Spinner
+        android:id="@+id/spinnerCrescimentoBebe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/editDataMedicao"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
